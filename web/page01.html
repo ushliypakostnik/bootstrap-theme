@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="{{ description }}" />
+    <meta name="keywords" content="{{ keywords }}" />
+    <title>Theme for Bootstrap 3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+
+    <script>
+        var ieVersion = (function() {
+            var ua = window.navigator.userAgent;
+            var msie = ua.indexOf('MSIE');
+            if (msie > 0) {
+                return parseInt (ua.substring(msie + 5, ua.indexOf('.', msie)));
+            }
+            return 0;
+        })();
+        if (ieVersion && ieVersion < 9) {
+            location.href = './legacy.html';
+        }
+    </script>
+
+<!-- @if NODE_ENV='development' -->
+    <link href="./less/styles.less" type="text/css" rel="stylesheet/less" />
+    <script>
+        var less = {
+            env: 'development'
+        };
+    </script>
+    <script src="./bower_components/less/dist/less.js"></script>
+
+    <!--[if lt IE 10]>
+        <script src="./bower_components/respond/dest/respond.src.js"></script>
+    <![endif]-->
+<!-- @endif -->
+
+<!-- @if NODE_ENV='production' !>
+    <link href="./css/styles.min.css" rel="stylesheet" type="text/css" />
+
+    <!--[if lt IE 10]>
+        <script src="./js/respond.min.js"></script>
+    <![endif]-->
+<!-- @endif -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
+
+    <link rel="icon" type="image/jpeg" href="./img/favicon.jpg" />
+
+    <style>
+        .navbar {
+            margin-bottom: 0;
+        }
+
+        .main-parent-container {
+            padding: 0;
+            height: calc(100% - 51px);
+        }
+
+        .left-panel-container {
+            float: left;
+            height: 100%;
+            width: 300px;
+        }
+
+        .left-panel-container > .panel, .right-panel-container > .panel {
+            height: 100%;
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+
+        .left-panel-container > .panel > .panel-heading, .right-panel-container > .panel > .panel-heading {
+            height: 40px;
+        }
+
+        .left-panel-container > .panel > .panel-body, .right-panel-container > .panel > .panel-body {
+            padding: 0;
+            overflow: auto;
+            height: calc(100% - 40px);
+        }
+
+        .right-panel-container > .panel > .panel-body > .container-fluid {
+            padding: 15px;
+        }
+
+        .right-panel-container {
+            float: right;
+            width: calc(100% - 300px);
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- page content -->
+
+    <!-- Static navbar -->
+    <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Добавить</a></li>
+                    <li><a href="#about">Фильтр</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Экспорт <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Список 1</a></li>
+                            <li><a href="#">Список 2</a></li>
+                            <li><a href="#">Список 3</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Групповая печать</li>
+                            <li><a href="#">Список 1</a></li>
+                            <li><a href="#">Список 2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#contact">Теги</a></li>
+                    <li><a href="#contact">Расписание</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Настройки <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Настройки 1</a></li>
+                            <li><a href="#">Настройки 2</a></li>
+                            <li><a href="#">Настройки 3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#contact">Статистика</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Моя страница <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Настройки</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid main-parent-container">
+        <div class="left-panel-container">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Список паломников</h3>
+                </div>
+                <div id="marwa-palmer-list" class="panel-body">
+                    <div class="list-group">
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                        <li class="list-group-item">Абдула Магомедов</li>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-panel-container">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Фильтр паломников
+                        <a href="#" class="pull-right btn btn-info btn-xs">Расширенный фильтр</a>
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Личные данные
+                                            <input type="text" class="pull-right"/>
+                                        </h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">label</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label">label</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label">label</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label">label</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">label</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label">label</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label">label</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label">label</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-primary">
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">label</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">label</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Дополнительно</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label">label</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label">label</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label">label</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label">label</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label">label</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label">label</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">label</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label">label</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">label</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label">label</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="row">
+                                                    <div class="col-md-8">
+                                                        <div class="form-group">
+                                                            <label class="control-label">label</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label class="control-label">label</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">label</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="bnt btn btn-success">Поиск</button>
+                                <button class="bnt btn btn-success">Поиск+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /page content -->
+
+<!-- @if NODE_ENV='development' -->
+    <script src="./bower_components/jquery/dist/jquery.js"></script>
+
+    <script src="./bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+    <script>var debug = true;</script>
+<!-- @endif -->
+
+<!-- @if NODE_ENV='production' !>
+    <script src="./js/app.min.js"></script>
+
+    <script>var debug = false;</script>
+<!-- @endif -->
+</body>
+</html>

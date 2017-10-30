@@ -1,0 +1,586 @@
+// MyStyles
+//////////////////////////////////////////////////////
+// @media all {}
+
+// Main Elements
+//////////////////////////////////////////////////////
+
+body {
+    font-family: @sans-font-family;
+    font-size: @font-size-base-bootstrap;
+    color: @text-color;
+    background: @white;
+    padding: 0 0 (@size * 4);
+    .selection (lighten(@active-color,50%));
+    quotes: "\00ab" "\00bb";
+}
+
+a {
+    font-family: @sans-font-family;
+    font-weight: @sans-bold-font-weight;
+    color: @link-color;
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+        outline: none !important;
+    }
+    &:active , &:focus {
+        text-decoration: none;
+        outline: none !important;
+    }
+}
+
+h1, h2, h3, h4, h5, h6,
+.pagination,
+.pager {
+    margin-top: @size / 2;
+    margin-bottom: @size / 2;
+}
+
+p,
+.well,
+.lead,
+blockquote,
+.table,
+.breadcrumb,
+.alert,
+.list-group,
+.form-group,
+.panel,
+legend {
+    margin-bottom: @size / 2;
+}
+
+.help-block {
+    margin-top: @size / 4;
+    margin-bottom: @size / 2;
+}
+
+.jumbotron {
+    margin-bottom: @size;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+strong {
+    font-style: bold;
+    font-weight: @sans-bold-font-weight;
+}
+
+// Списки по умолчанию
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+// Секционно-смысловые блоки
+main, article, aside, figure, address {
+    margin: 0;
+    padding: 0;
+}
+
+// Коллекция кнопок
+button,
+a {
+    outline: none !important;
+    &:hover, &:active, &:focus {
+        outline: none !important;
+    }
+}
+
+.btn {
+    font-weight: @serif-bold-font-weight;
+    .border-radius (@border-radius-small);
+    .text (@sans-font-family, @font-size-normal, @sans-bold-font-weight);
+
+    &:active {
+        .boxShadowInset(@shadow-coords-x, @shadow-coords-y, @shadow-size, @shadow-stretch, @shadow-color) !important;
+    }
+    &.btn-default {
+        .border-radius (@border-radius-base);
+        .text (@sans-font-family, @font-size-normal, @sans-bold-font-weight);
+        color: @text-color;
+        &:active {
+            color: darken(@text-color, @fade);
+        }
+    }
+    &.btn-lg {
+        .border-radius (@border-radius-large);
+        .text (@sans-font-family, @font-size-large, @sans-bold-font-weight);
+    }
+    &.btn-sm {
+        .border-radius (@border-radius-small);
+        .text (@sans-font-family, @font-size-small, @sans-bold-font-weight);
+    }
+    &.btn-xs {
+        .border-radius (@border-radius-xs);
+        .text (@sans-font-family, @font-size-xsmall, @sans-bold-font-weight);
+    }
+    &.btn-link {
+        &:active {
+            .boxShadowInset (0, 0, 0, 0, transparent) !important;
+        }
+    }
+    // Выключенные кнопки
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        .opacity(.5);
+    }
+}
+
+// Поля ввода по умолчанию
+
+input, textarea, select {
+}
+.form-control {
+    .text (@sans-font-family, @font-size-normal, @sans-normal-font-weight);
+    .border-radius (@border-radius-small);
+    .placeholder (@input-color-placeholder);
+    .boxShadowInset(0, 0, 0, 0, transparent);
+    .transition (all, @transition-duration, @transition-timing-function, @transition-delay) !important;
+
+    .form-control-focus(@main-color);
+
+    &:active, &:focus {
+        &:not[disables] {
+            outline: none !important;
+            border-color: @main-color;
+        }
+    }
+    &.input-lg {
+        .border-radius (@border-radius-large);
+    }
+    &.input-sm {
+        .border-radius (@border-radius-xs);
+    }
+}
+
+label {
+    margin-bottom: 2px;
+}
+
+select {
+    &.form-control {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+
+        &[multiple] {
+            padding-left: 0;
+            padding-right: 0;
+
+            option {
+                padding-left: @padding-base-horizontal + 4px;
+                padding-right: @padding-base-horizontal + 4px;
+            }
+        }
+    }
+}
+
+textarea {
+    width: 100%;
+    max-width: 100%;
+    max-height: @line-height-computed * 6;
+}
+
+// Чекбоксы по умолчанию
+.checkbox input:active,
+.checkbox input:focus {
+    .boxShadow (0, 0, 0, 0, transparent) !important;
+}
+
+legend {
+    color: @gray-light;
+    border-color: @border-color;
+}
+
+
+// Page Template
+//////////////////////////////////////////////////////
+
+.page {
+
+
+}
+
+// Main Blocks ans classes
+//////////////////////////////////////////////////////
+
+// Container for Bootstrap Grid
+.container-fluid {
+    padding-left: @size / 2;
+    padding-right: @size / 2;
+}
+
+// Bootstrap Components
+//////////////////////////////////////////////////////
+
+// Component animations
+.fade {
+  .transition(opacity @transition-duration @transition-timing-function);
+}
+
+.page-header {
+    border-bottom: @border-width solid @border-color;
+}
+
+.progress {
+    height: 5px;
+    margin-bottom: @size / 2;
+}
+
+.navbar {
+    &.navbar-default {
+        .navbar-toggle {
+            border-color: @border-color;
+
+            .icon-bar {
+                background-color: @text-color;
+            }
+
+            &:hover, &:active, &:focus {
+                background: @navbar-default-link-active-bg;
+            }
+        }
+    }
+    &.navbar-inverse {
+        .navbar-toggle {
+
+            .icon-bar {
+                background-color: @light-color;
+            }
+
+            &:hover, &:focus {
+                background: @navbar-inverse-link-active-bg;
+            }
+        }
+    }
+
+    .navbar-brand {
+        .text (@sans-font-family, @font-size-normal, @sans-bold-font-weight);
+        line-height: @line-height-computed;
+    }
+}
+
+// Modals
+//////////////////////////////////////////////////////
+
+// Модальное окно
+.bs-component .modal {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    bottom: auto;
+    z-index: 1;
+    display: block;
+
+    .modal-dialog {
+        width: 90%;
+    }
+}
+
+// Модальное окно
+.modal {
+
+    &.fade .modal-dialog {
+        .translate(0, -25%);
+        .transition-transform(~"0.2s ease-out");
+    }
+
+    &.in .modal-dialog { .translate(0, 0) }
+    .modal-dialog {
+
+        .modal-content {
+            margin: (@size * 2) auto;
+            border-color: @border-color;
+
+            .modal-header {
+                border-bottom: none;
+                padding: (@size / 2) @size (@size / 2) (@size / 2);
+
+                .close {
+                    right: 8px;
+                    top: 4px;
+                }
+            }
+
+            .modal-body {
+                padding: @size / 2;
+            }
+
+            .modal-footer {
+                border-top: none;
+                padding: @size / 2;
+            }
+        }
+    }
+}
+
+// Dropdowns
+//////////////////////////////////////////////////////
+
+// Дропдауны по умолчанию
+.dropdown-menu {
+    margin-top: 0;
+    max-height: 450px;
+    min-width: 1px;
+    z-index: 1900;
+    padding: 0;
+    border: @border-width solid @border-color;
+    .boxShadow (@shadow-coords-x, @shadow-coords-y, (@shadow-size * 2), @shadow-stretch, @shadow-color);
+
+    .divider {
+        margin-top: @size / 4;
+        margin-bottom: @size / 4;
+    }
+
+    > li:last-child > a {
+        .borderRadius (0, 0, @border-radius-base, @border-radius-base);
+    }
+}
+
+// Для "выбранных пунктов меню" - класс .active
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+    background: transparent;
+    color: @gray-light !important;
+    cursor: default;
+    pointer-event: none;
+}
+
+.open > .dropdown-toggle.btn-default {
+    &, &:focus {
+        color: darken(@text-color, @fade);
+    }
+}
+
+// Tables
+//////////////////////////////////////////////////////
+
+table.table {
+    th {
+        background: @background-color;
+        color: @light-color;
+    }
+}
+
+// Forms
+//////////////////////////////////////////////////////
+
+.form-horizontal .control-label,
+.radio,
+.checkbox {
+    @media (min-width: @screen-sm) {
+        padding-bottom: @padding-base-vertical + @border-width;
+        line-height: @line-height-normal-custom;
+    }
+}
+
+input[type="radio"], input[type="checkbox"] {
+    @media (min-width: @screen-sm) {
+        margin-top: 6px;
+    }
+    @media (max-width: @screen-xs-max) {
+        margin-top: 3px;
+    }
+}
+
+// Navs
+//////////////////////////////////////////////////////
+
+.nav-tabs {
+    border-color: @border-color;
+
+    > li {
+        &.active {
+            a {
+                &, &:hover, &:active, &:focus {
+                    color: @text-color;
+                    border-color: @border-color @border-color transparent @border-color;
+                }
+            }
+        }
+
+        a {
+            padding: (@size / 4) (@size / 2);
+        }
+    }
+}
+
+.nav-pills {
+    > li {
+        a {
+            padding: (@size / 4) (@size / 2);
+        }
+    }
+}
+
+.tab-pane {
+    padding: @size / 2;
+}
+
+.pager {
+    > li {
+        a {
+            padding: (@size / 4) (@size / 2);
+            border-color: @border-color;
+        }
+    }
+}
+
+.list-group {
+    .list-group-item {
+        padding: (@size / 4) (@size / 2);
+
+        &, &:hover, &:active, &:focus {
+            color: @text-color;
+        }
+
+        &.active {
+            color: @white;
+        }
+
+        .list-group-item-heading {
+            color: @main-color;
+        }
+    }
+}
+
+.panel {
+    .panel-heading,
+    .panel-body,
+    .panel-footer {
+        padding: (@size / 4) (@size / 2);
+    }
+}
+.panel-default {
+    border-color: @border-color;
+
+    .panel-heading,
+    .panel-footer {
+        border-color: @border-color;
+    }
+}
+
+.well {
+    padding: (@size / 4) (@size / 2);
+    border-color: @border-color;
+    .boxShadowInset (0, 0, 0, 0, transparent) !important;
+}
+
+.close {
+    position: absolute;
+
+    .opacity(0.5);
+
+    &, &:hover, &:active, &:focus {
+        color: @text-color;
+    }
+
+    &:hover {
+        .opacity(1);
+    }
+}
+.alert-dismissable .close, .alert-dismissible .close {
+    right: -12px;
+    top: -8px;
+}
+.alert {
+    padding: (@size / 2) @size (@size / 2) (@size / 2);
+
+    .close {
+        right: -12px;
+        top: -8px;
+    }
+
+    &.alert-warning {
+        .close {
+            color: @state-warning-text;
+        }
+    }
+    &.alert-danger {
+        .close {
+            color: @state-danger-text;
+        }
+    }
+    &.alert-success {
+        .close {
+            color: @state-success-text;
+        }
+    }
+    &.alert-info {
+        .close {
+            color: @state-info-text;
+        }
+    }
+}
+
+.jumbotron {
+    padding: @size (@size * 2);
+}
+.container,
+.container-fluid {
+    .jumbotron {
+        @media (min-width: @screen-sm) {
+            padding: @size (@size * 2);
+        }
+    }
+}
+
+.pagination {
+    > li {
+        a {
+            .text (@sans-font-family, @font-size-normal, @sans-bold-font-weight);
+            line-height: @line-height-normal-custom;
+
+            &, &:hover, &:active, &:focus {
+                border-color: @border-color;
+            }
+        }
+    }
+
+    &.pagination-lg {
+        > li {
+            a {
+                .text (@sans-font-family, @font-size-large, @sans-bold-font-weight);
+                line-height: @line-height-large-custom;
+            }
+        }
+    }
+    &.pagination-sm {
+        > li {
+            a {
+                .text (@sans-font-family, @font-size-small, @sans-bold-font-weight);
+                line-height: @line-height-small-custom;
+            }
+        }
+    }
+}
+
+.popover {
+    .popover-content {
+        padding: (@size / 4) (@size / 2);
+    }
+}
+
+.badge {
+    vertical-align: top;
+    background-color: @main-color;
+}
+
+
+// Mobile version
+//////////////////////////////////////////////////////
+
+@media (max-width: @screen-xs-max) {
+
+    .container-fluid, .container {
+        padding-left: @size / 2;
+        padding-right: @size / 2;
+    }
+
+}
