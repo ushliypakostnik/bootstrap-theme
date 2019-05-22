@@ -1,7 +1,9 @@
 Devprod static project skel
 ===========================
 
-Кастомизация темы для Bootstrap3 и Less.
+Кастомизация темы для Bootstrap3 на Less.
+
+Пример использования http://levon.kafedra.org/freelance/themes/.
 
 
 Deploy
