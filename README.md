@@ -1,5 +1,5 @@
-Devprod static project skel
-===========================
+Theme for Bootstrap3 on Less
+=============================
 
 Кастомизация темы для Bootstrap3 на Less.
 
