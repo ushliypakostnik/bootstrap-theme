@@ -1,16 +1,11 @@
 Devprod static project skel
 ===========================
 
-Devprod static project skel является основой для создания новых статичных
-html-проектов.
+Кастомизация темы для Bootstrap3 и Less.
+
 
 Deploy
 ------
-
-Установка системных пакетов
-
-    $ sudo apt-get install nodejs
-    $ sudo apt-get install curl
 
 Установка зависимостей (npm packages, bower packages)
 
@@ -66,57 +61,6 @@ Deploy
 * __Gruntfile.js__ - конфигурация сборщика проекта Grunt
 * __package.json__ - конфигурация npm-пакета
 * __README.md__ - файл документации по проекту
-
-
-Работа с проектом
------------------
-
-### Общие замечания
-
-Концепции использования:
-* Cтраница может использовать несколько js-модулей одновременно.
-
-* Несколько страниц могут использовать один и тот же модуль.
-
-### Создание новой страницы
-
-* На основе *web/js/page-template.js* создать новый модуль, напр. *web/js/app/contacts.js*.
-
-Слeдует помнить, что кастомные модули "для шаблонов страниц" помещаются в папку *web/js/app/*.
-
-* В файле *web/js/app/contacts.js* заменить строки:
-
-
-    var App = (function($, Logger, Translator) {
-    на
-    var Contacts = (function($, Logger, Translator) {
-
-    moduleName: 'App',
-    на
-    moduleName: 'Contacts',
-
-
-* На основе *web/app.html* создать новую страницу, напр. *web/contacts.html*.
-* В файле *web/contacts.html* добавить нужный код внутри блока:
-
-
-    <!-- page content --><!-- /page content -->
-
-
-* В файле *web/contacts.html* подключить js-модуль __Contacts__ (после подключения всех остальных скриптов):
-
-
-    <script src="./js/app/contacts.js"></script>
-
-
-* В файле *web/contacts.html* инициализировать модуль __Contacts__ (в самом конце страницы):
-
-
-    <script>
-        Contacts.init({
-            debug: debug
-        });
-    </script>
 
 
 Nginx config example
